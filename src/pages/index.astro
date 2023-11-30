@@ -1,5 +1,5 @@
 ---
-
+import ToggleSidebar from '../components/ToggleSidebar.astro';
 ---
 
 <html lang="en">
@@ -9,8 +9,32 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link href="/kawai-font.woff" rel="stylesheet" />
+		<link rel="stylesheet" href="/kawai.css" />
+		<script src="/kawai.js" defer></script>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="topbar-o">
+			<!-- Add your navigation links and branding elements here -->
+			<div>Topbar</div>
+		</div>
+		<div id="sidebar" class="sidebar-o relative">
+			<!-- Add navigation links and content for the sidebar here -->
+			<ToggleSidebar />
+		</div>
+		<div class="block-l el-9 shadow">
+			<div class="block-text la">Hi from Kawai</div>
+			<div class="block-text lb">
+				Kawai - is the world famous framework for build anything that you want in
+				one sec!
+			</div>
+		</div>
+		<div class="block-card">
+			<!-- Card content goes here -->
+		</div>
+		<div class="bottombar-o">
+			<!-- Add your content, links, or actions for the bottom bar here -->
+			<div class="w-full flex justify-end">Bottombar</div>
+		</div>
 	</body>
 </html>

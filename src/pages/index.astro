@@ -3,38 +3,69 @@ import ToggleSidebar from '../components/ToggleSidebar.astro';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-		<link href="/kawai-font.woff" rel="stylesheet" />
-		<link rel="stylesheet" href="/kawai.css" />
-		<script src="/kawai.js" defer></script>
-	</head>
-	<body>
-		<div class="topbar-o">
-			<!-- Add your navigation links and branding elements here -->
-			<div>Topbar</div>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<title>Astro</title>
+	<link href="/kawai-font.woff" rel="stylesheet" />
+	<link rel="stylesheet" href="/kawai.css" />
+	<script src="/kawai.js" defer></script>
+</head>
+
+<body>
+	<div class="sidebar-o desktop-only" id="sidebar">
+		<div class="block-text logo la">Menu</div>
+
+		<!-- Sidebar Navigation -->
+		<div class="side-tab-block">
+			<div class="side-tab-block-e" onclick="OpenTab('1')">Home</div>
+			<div class="side-tab-block-e" onclick="OpenTab('2')">Other</div>
 		</div>
-		<div id="sidebar" class="sidebar-o relative">
-			<!-- Add navigation links and content for the sidebar here -->
-			<ToggleSidebar />
+	</div>
+
+	<div class="topbar-o">
+		<div class="block-button" onclick="toggleSidebar()">Side</div>
+
+		<div class="la block-text">Astro</div>
+
+		<div class="top-tab-block">
+			<div class="top-tab-block-e">Home</div>
+			<div class="top-tab-block-e">About</div>
+			<div class="top-tab-block-e">Contact</div>
 		</div>
-		<div class="block-l el-9 shadow">
-			<div class="block-text la">Hi from Kawai</div>
-			<div class="block-text lb">
-				Kawai - is the world famous framework for build anything that you want in
-				one sec!
+	</div>
+
+	<div class="block-o">
+		<div class="tab-o tab-o-default" id="1">
+			<div class="coll-lo">
+				<div class="block-card el-9">
+					<div class="block-text la">Home</div>
+					<div class="block-text lb">
+						Home page is the main page of your website. You can edit it in
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="block-card">
-			<!-- Card content goes here -->
-		</div>
-		<div class="bottombar-o">
-			<!-- Add your content, links, or actions for the bottom bar here -->
-			<div class="w-full flex justify-end">Bottombar</div>
-		</div>
-	</body>
+
+		<div class="tab-o" id="2">
+			<div class="coll-lo">
+				<div class="block-card el-9">
+					<div class="block-text la">Other</div>
+					<div class="block-text lb">
+						Other page is the main page of your website. You can edit it too!
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<!-- Bottom bar is not working quite well yet so it's commented out
+	<div class="bottombar-o">
+		<!-- Add your content, links, or actions for the bottom bar here
+		<div class="w-full flex justify-end">Bottombar</div>
+	</div>-->
+</body>
+
 </html>
